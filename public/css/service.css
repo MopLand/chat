@@ -1,0 +1,35 @@
+@import url('common.css');
+
+#topper {
+    border-bottom:1px solid #ccc; overflow: hidden; background: #FFF; padding:0 10px; box-sizing: border-box; z-index: 99;
+	text-align:center; line-height: 49px;
+}
+
+	#topper h1{ font-size: 20px; float: left; }
+	#topper span{ font-size: 10px; color:#999; float: right; }
+	
+	#topper ul{ list-style:none; float: left; }
+		#topper ul li{ float: left; padding:0 15px; cursor: pointer; line-height: 47px; position: relative; -webkit-transition: all .2s ease; }
+		#topper ul li.active{ display:block; color: #2792FF; border-bottom: 2px solid #2792FF; }
+		
+		#topper ul li strong{ font-weight: normal; }
+		
+		#topper ul li em{
+			position: absolute;
+			top: 0;
+			right: 0;
+			font-family: Arial,sans-serif;
+			font-size: 10px;
+			font-style: normal;
+			color: #FFF;
+			background-color: #F00;
+			border: 2px solid #FFF;
+			line-height: 10px;
+			padding: 3px 5px;
+			text-align: center;
+			border-radius: 10px;
+			text-shadow: none;
+		}
+
+
+

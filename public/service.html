@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Simple chat</title>
+	<meta name="viewport" content="width=device-width,user-scalable=no, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/service.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>    
+</head>
+<body>
+    <div id="topper">
+		<ul id="users">
+		</ul>
+		<span id="socket">...</span>
+	</div>    
+    <div id="content">
+		<!--ul id="dialog">
+		
+		</ul-->
+		<div class="nobody">没有聊天对象</div>
+	</div>
+	
+	<!--toolbar-->
+	<div id="toolbar">
+		
+        <!--input type="text" id="input" placeholder="想说的话……" /-->
+		<ul>
+			<ol class="tbox">
+				<li>
+					<a class="pointer toolsface" id="facePoint"></a>
+				</li>
+
+				<li>
+					<iframe style="display: none;" name="Upload_iframe" id="Upload_iframe"></iframe>
+					<form method="post" enctype="multipart/form-data" target="Upload_iframe" action="" id="Upload_form">
+						<input type="file" accept="image/jpg, image/jpeg, image/png" class="picfile" id="Upload_file" name="attach">
+						<a class="pointer toolscamera" id="picPoint"></a>
+					</form>
+				</li>
+
+				<li style="width: 100%;">
+					<input type="text" id="sendtext" class="toolstext" style="width: 100%;" />
+				</li>
+
+				<li>
+					<a id="btnsend" class="toolssend on">发送</a>
+				</li>
+			</ol>
+
+			<ol id="face_area" >
+
+				<li class="page_emotion box_swipe" id="page_smiley" >
+					<dl id="list_smiley" class="list_emotion pt_10"></dl>
+					<dt>
+						<ol id="nav_smiley" class="nav_emotion">
+							<span class="on"></span>
+							<span></span>
+						</ol>
+					</dt>
+				</li>
+
+				<li class="page_emotion box_swipe" id="page_xiong" style="display:none;">
+					<dl id="list_xiong" class="list_emotion pt_10"></dl>
+					<dt>
+						<ol id="nav_xiong" class="nav_emotion">
+							<span class="on"></span>
+							<span></span>
+						</ol>
+					</dt>
+				</li>
+
+				<li class="page_emotion box_swipe" id="page_mayi" style="display:none;">
+					<dl id="list_mayi" class="list_emotion pt_10"></dl>
+					<dt>
+						<ol id="nav_mayi" class="nav_emotion">
+							<span class="on"></span>
+							<span></span>
+						</ol>
+					</dt>
+				</li>
+
+			</ol>
+
+			<ol>
+				<li class="facetype" id="facetype" style="display:none;"><span data-key="jingdian" class="jingdian on">经典</span><span data-key="xiong" class="xiong">熊大&兔兔</span><span data-key="mayi" class="mayi">黑蚂蚁</span></li>
+			</ol>
+
+		</ul>
+
+    </div>
+	<!--/toolbar-->
+	
+	<!--script-->
+	<script src="js/swipe.js"></script>	
+	<script src="js/basic.js"></script>
+	<script src="js/service.js"></script>
+	<!--/script-->
+	
+</body>
+</html>
+
+<script>
+    var sWeimobId = "1415642005995";
+    var AId = 708;
+    var SocketIp = "kf.weimob.com";
+    var CustomerHeadUrl = "images/mengmei.jpg";
+</script>

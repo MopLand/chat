@@ -1,0 +1,34 @@
+<html>
+<head>
+	<meta charset="utf-8"/>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="http://localhost:8080/socket.io/socket.io.js"></script>
+    <script>
+        $(function(){
+            var socket = io.connect('http://localhost:8080');
+			socket.on('connect', function (data) {
+				console.log(data);	
+			});
+			 $("#send").click(function(e){
+				var from = $('#user_name').val(),
+				    msg  = $('#message').val(),
+				    to   = $('#to').val(),
+				 $message_list = $('#message_list');
+				 socket.emit('new user',from);
+				 socket.emit('private message',from,to,msg);
+				 socket.on('to'+from, function (data) {
+					$message_list.append('<li>'+data.from+'说'+data.message+'<li>');
+				});
+			 });
+        });
+    </script>
+</head>
+<body>
+	姓名:<input id="user_name" type="text"/><br>
+	发送给：<input type="text" id="to"/><br>
+	消息内容:<input type="text" id="message" /><button type="button" id="send">发送</button>
+	<ul id="message_list">
+		
+	</ul>
+</body>
+</html>
